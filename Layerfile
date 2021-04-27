@@ -4,8 +4,11 @@ FROM vm/ubuntu:18.04
 # To note: Layerfiles create entire VMs, *not* containers!
 
 RUN curl -fSsL https://deb.nodesource.com/setup_12.x | bash && \
-    apt-get install nodejs python3 make gcc build-essential && \
-    apt-get install xvfb
+    apt-get install nodejs python3 make gcc build-essential
+
+# Cypress OS dependencies
+# https://on.cypress.io/ci#Dependencies
+RUN apt-get install libnss3 xvfb
 
 # node is a memory hog
 MEMORY 2G

@@ -30,3 +30,4 @@ RUN BACKGROUND npm start
 EXPOSE WEBSITE http://localhost:8888
 
 # How to run Cypress against the website?!
+RUN npx cypress run

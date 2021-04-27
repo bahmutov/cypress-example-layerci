@@ -52,4 +52,7 @@ RUN BACKGROUND npm start
 EXPOSE WEBSITE http://localhost:8888
 
 SECRET ENV CYPRESS_RECORD_KEY
-RUN npx cypress run --record
+
+# execute the tests against the same machine (?) on N machines
+SPLIT 2
+RUN npx cypress run --record --parallel --ci-build-id $LAYERCI_JOB_ID-$RETRY_INDEX

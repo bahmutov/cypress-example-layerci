@@ -12,6 +12,13 @@ ENV NODE_OPTIONS=--max-old-space-size=8192
 
 COPY . .
 RUN npm ci
+
+# hmm, how do we do caching?
+# need to cache ~/.npm and ~/.cache/Cypress
+
+# shows where Cypress was installed and what's available
+RUN npx cypress info
+
 RUN BACKGROUND npm start
 
 # Create a unique link to share the app in this runner.

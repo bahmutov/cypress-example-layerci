@@ -8,7 +8,9 @@ RUN curl -fSsL https://deb.nodesource.com/setup_12.x | bash && \
 
 # Cypress OS dependencies
 # https://on.cypress.io/ci#Dependencies
-RUN apt-get install libnss3 xvfb
+RUN apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev \
+    libnotify-dev libgconf-2-4 libnss3 libxss1 \
+    libasound2 libxtst6 xauth xvfb
 
 # node is a memory hog
 MEMORY 2G

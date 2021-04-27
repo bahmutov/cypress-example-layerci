@@ -22,8 +22,13 @@ RUN npm --version
 COPY . .
 RUN npm ci
 
-# hmm, how do we do caching?
-# need to cache ~/.npm and ~/.cache/Cypress
+# Typically we would need to cache
+# the NPM modules and the Cypress binary folder
+# in the folders ~/.npm and ~/.cache/Cypress
+# but LayerCI literally makes and stores Docker container
+# after each command, thus if there were no changes
+# the layers would not be rebuilt
+# Q: is this enough to cache the binary if the source code changes?!
 
 # shows where Cypress was installed and what's available
 RUN npx cypress info

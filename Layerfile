@@ -34,5 +34,5 @@ RUN BACKGROUND npm start
 # Every time someone clicks the link, we'll wake up this staging server.
 EXPOSE WEBSITE http://localhost:8888
 
-# How to run Cypress against the website?!
-RUN npx cypress run
+SECRET ENV CYPRESS_RECORD_KEY
+RUN npx cypress run --record

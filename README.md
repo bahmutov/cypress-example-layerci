@@ -6,3 +6,6 @@
 - from another terminal run `npm test`
 
 or run the app and the tests with the single command `npm run ci`
+
+TODO: add Cypress Dashboard badge
+TODO: add LayerCI run status badge

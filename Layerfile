@@ -42,6 +42,7 @@ RUN npx cypress info
 # print LayerCI variables
 # https://layerci.com/docs/layerfile-reference/build-env
 # using https://github.com/bahmutov/print-env
+# https://github.com/cypress-io/cypress/issues/16101
 RUN npx @bahmutov/print-env GIT LAYERCI RETRY
 
 RUN BACKGROUND npm start
